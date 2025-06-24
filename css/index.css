@@ -1,0 +1,269 @@
+:root {
+    scroll-behavior: smooth;
+    font-size: 100%;
+    --footer-td-un: underline;
+    --footer-fs-p: .7rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}
+
+p a {
+    display: inline;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong,
+em,
+mark,
+pre,
+code {
+    font: inherit;
+}
+
+mark {
+    background-color: transparent;
+}
+
+picture,
+img,
+video,
+iframe {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    height: initial;
+}
+
+body {
+    font-family: "Montserrat";
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: .2rem;
+    text-align: center;
+}
+
+.Header {
+   
+    min-height: 6.25rem;
+    display: flex;
+
+}
+
+.Header-wrap {
+    width: 90%;
+    
+    margin: auto;
+    min-height: 7.5rem;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Header-logo {
+    width: 20vh;
+}
+
+.Header-btn {
+    display: none;
+}
+
+.Header-ul {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+   
+}
+.Header-seccion{
+     transition: all 0.4s ease;
+}
+.Header-seccion:hover {
+    transform: scale(1.1);
+}
+
+.Main {
+    
+    min-height: 42.75rem;
+    
+}
+
+.Main-section {
+    
+    min-height: 40.625rem;
+    margin: auto;
+    display: flex;
+    background-image: url(/pixarfinal/assetspixar/insideout-fondo.jpg);
+    background-size: cover;
+}
+
+.Main-h2 {
+    width: 50%;
+    
+    margin: auto;
+}
+
+.Columnas {
+    width: 90%;
+    min-height: 25rem;
+    
+    margin: 4rem auto 2rem;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+
+}
+
+.Columnas-img {
+    background-size: cover;
+    transition: all 1s ease;
+}
+
+.Columnas-img:hover {
+    transform: scale(1.1);
+}
+
+.Columnas-h3 {
+    margin: 1rem 0 0;
+}
+
+.Footer {
+    width: 100%;
+    min-height: 22rem;
+    font-weight: 300;
+    font-size: var(--footer-fs-p);
+}
+
+.Footer-copy {
+    margin: 1rem;
+}
+
+.Footer-btn {
+    margin: 2rem auto;
+    padding: 1rem;
+    outline: .1rem solid rgb(5, 176, 5);
+    color: rgb(5, 176, 5);
+}
+
+.Footer-redes {
+    margin: 4rem auto 3rem;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.Politicas {
+    width: 30%;
+    margin: auto;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.Politicas-li {
+
+    text-decoration: underline;
+    font-weight: 300;
+    font-size: var(--footer-fs-p);
+}
+
+
+@media (max-width:900px) {
+    .Header-btn {
+        display: flex;
+        text-transform: uppercase;
+        letter-spacing: .4rem;
+        background-color: white;
+
+    }
+
+    .Header-wrap {
+        position: relative;
+    }
+
+    .Header-nav {
+        display: none;
+        position: absolute;
+        top: 80%;
+        right: 0;
+    }
+
+    .Header-nav.isActive {
+        width: fit-content;
+        background-color: rgb(252, 249, 249);
+        box-shadow: 1.25rem 1.25rem 3.75rem #bebebe,
+            -20px -20px 60px #ffffff;
+        display: flex;
+        flex-flow: column;
+        padding: 1rem;
+
+    }
+
+    .Header-ul {
+        flex-direction: column;
+        justify-content: end;
+        align-items: end;
+    }
+
+    .Header-logo {
+        width: 10vh;
+    }
+
+    .Header-seccion:hover {
+        text-decoration: underline;
+        text-underline-offset: 6px;
+    }
+
+    .Main-section {
+        min-height: 21.875rem;
+    }
+
+    .Columnas-h3:hover {
+        text-decoration: underline;
+        text-underline-offset: 6px;
+    }
+
+    .Columnas {
+
+        padding: 2rem;
+        display: flex;
+        flex-flow: column;
+        gap: 3rem;
+    }
+
+    .Politicas {
+        width: 100%;
+        flex-flow: column;
+    }
+}
