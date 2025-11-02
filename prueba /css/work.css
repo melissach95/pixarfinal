@@ -1,0 +1,297 @@
+:root {
+    scroll-behavior: smooth;
+    font-size: 100%;
+    --tt-up-subt: uppercase;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}
+
+p a {
+    display: inline;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong,
+em,
+mark,
+pre,
+code {
+    font: inherit;
+}
+
+mark {
+    background-color: transparent;
+}
+
+picture,
+img,
+video,
+iframe {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    height: initial;
+}
+
+svg {
+    display: block;
+    width: initial;
+    height: initial;
+    fill: currentColor;
+}
+
+
+form,
+input,
+select,
+option,
+textarea,
+label,
+fieldset,
+legend,
+button {
+    display: block;
+    font: inherit;
+    background-color: initial;
+}
+
+fieldset {
+    border: none;
+}
+
+button,
+label {
+    cursor: pointer;
+}
+body{
+    font-family: 'jogan_softregular', sans-serif;
+}
+
+/* uso fixed y bottom 0 para mantener el header fijo en la parte de abajo de la página, aunque se haga scroll */
+.Header-menu {
+    width: 100%;
+    min-height: 10vh;
+    background-color: rgb(244, 50, 193);
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+
+
+    position: fixed;
+    bottom: 0vh;
+
+    z-index: 2;
+
+}
+
+.Header-sections {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+    margin: 0 2rem 0 0;
+
+    font-size: 1.5rem;
+    color: #adff2f;
+}
+
+.Header-section {
+    transition: color 1s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+/*  al pasar el mouse el texto se eleva, se agrega sombra y cambia de color   */
+.Header-section:hover {
+    color: white;
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* agrego tamaño variable al logo para que se adapte */
+.Header-logo {
+    width: 25vh;
+}
+
+.Work {
+    width: 100%;
+    min-height: 90vh;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: start;
+    align-items: center;
+    /* oculto el puntero para que se vea el mensaje  */
+    cursor: none;
+}
+
+/*  Mantiene la presentación fija en pantalla mientras se hace scroll */
+/* se usa grid y no flex para mantener la información en el mismo lugar  */
+
+.Work-sticky {
+    max-width: 300px;
+    color: rgb(244, 50, 193);
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: .5rem;
+    /* se fija a la mitad de la pantalla */
+    position: sticky;
+    top: 45vh;
+}
+
+.Work-p {
+    text-transform: var(--tt-up-subt);
+    text-align: center;
+
+}
+
+.Work-p.h2 {
+    grid-column: span 2;
+}
+
+.Work-p.tres {
+    grid-column: span 2;
+}
+
+/* agrego una altura amplia para generar un scroll largo mientras aparece un proyecto por ventana */
+/* y agrego un margin bottom para empujar el contenido hacia abajo y que en un primer momento no se vean los proyectos  */
+.Work-proyectos {
+    width: 90%;
+    min-height: 800vh;
+    margin: 100vh 0 0 0;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    grid-template-areas:
+        "mela1 nada1"
+        "nada2 feti2"
+        "aguila3 nada3"
+        "nada4 fotografia4"
+        "tada5 nada5"
+    ;
+
+    z-index: 1;
+}
+
+.Work-proyecto.uno {
+    grid-area: mela1;
+}
+
+.Work-proyecto.dos {
+    grid-area: feti2;
+}
+
+.Work-proyecto.tres {
+    grid-area: aguila3;
+}
+
+.Work-proyecto.cuatro {
+    grid-area: fotografia4;
+}
+
+.Work-proyecto.cinco {
+    grid-area: tada5;
+}
+
+/* aspecto visual de como aparece el mouse y propiedades necesarias para que siga el movimiento del mouse */
+.Aviso-mouse {
+    width: 5rem;
+    height: 5rem;
+    background-color: #acff2f9c;
+    padding: 1rem;
+    text-align: center;
+    position: fixed;
+    top: -2.5rem;
+    left: -2.5rem;
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 1;
+    transition: opacity 2s ease;
+}
+
+/* cuando desaparezca el aviso será de manera suave, por eso agrego opacity y no grid */
+.Aviso-mouse.isActive {
+    opacity: 0;
+}
+
+/* Cada proyecto tiene su propio tipo de reacción visual al estar activo, hay unos que por la imagen no le queda bien quitarles el brillo */
+
+.Work-imagen.uno {
+    transition: filter 0.4s ease, outline 1s ease;
+}
+
+.Work-imagen.uno.isActive {
+    filter: brightness(0.6);
+    outline: 2px solid rgb(244, 50, 193);
+}
+
+.Work-imagen.dos {
+    transition: outline 2s ease, width 1s ease;
+}
+
+.Work-imagen.dos.isActive {
+    outline: 3px solid rgb(244, 50, 193);
+    width: 95%;
+}
+
+.Work-imagen.tres {
+    transition: filter 0.4s ease, outline 2s ease, width 1s ease;
+}
+
+.Work-imagen.tres.isActive {
+    filter: brightness(0.6);
+    outline: 3px solid rgb(244, 50, 193);
+    width: 95%;
+}
+
+.Work-imagen.cuatro {
+    transition: outline 2s ease, width 1s ease;
+}
+
+.Work-imagen.cuatro.isActive {
+    outline: 3px solid rgb(244, 50, 193);
+    width: 95%;
+}
+
+.Work-imagen.cinco {
+    transition: outline 2s ease, width 1s ease;
+}
+
+.Work-imagen.cinco.isActive {
+    outline: 3px solid rgb(244, 50, 193);
+    width: 95%;
+}
+
+/* reduzco un poco el tamaño del scroll en pantallas más pequeñas */
+@media (max-width:820px) {
+    .Work-proyectos {
+        min-height: 600vh;
+    }
+
+    .Header-sections {
+        gap: 1rem;
+    }
+}

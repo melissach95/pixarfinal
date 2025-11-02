@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>work</title>
+    <link rel="stylesheet" href="css/work.css">
+    <script src="js/work.js" defer ></script>
+    <link rel="stylesheet" href="assets/fonts/stylesheet.css">
+    <link rel="stylesheet" href="assets/fonts/stylesheetjogan.css">
+ 
+</head>
+
+<body>
+    <header  class="Header">
+        <section class="Header-menu">
+            <h1 class="Header-logo">
+                <a href="index.html" title="ir a home" class="Header-home">
+                    <picture>
+
+                    <img src="assets/logoverde.png" alt="melissa chavarro" class="Header-logo">
+                    </picture>
+                </a>
+            </h1>
+            <nav class="Header-nav">
+                <ul class="Header-sections">
+                    <li class="Header-section work">
+                        <a href="work.html" title="ir a work" class="Header-work">Work</a>
+                    </li>
+                    <li class="Header-section contact">
+                        <a href="contact.html" title="ir a contact" class="Header-contact">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+        </section>
+    </header>
+
+    <main class="Work">
+        <section class="Work-sticky">
+            <!-- el nombre tiene jerarquia sobre lo demas, para motores de busqueda -->
+            <h2 class="Work-p h2">[melissa chavarro]</h2>
+            <p class="Work-p uno">[publicista]</p>
+            <p class="Work-p dos">[diseñadora ux/ui]</p>
+            <p class="Work-p tres">a veces [geminis] a veces [cancer]</p>
+        </section>
+
+        <!-- Uso <article> porque cada proyecto puede considerarse un contenido independiente, se entienden por si solos -->
+        <article class="Work-proyectos">
+
+            <h3 class="Work-proyecto uno"><a href="mela.html" title="ir a melab3" class="Work-mela">
+                    <img src="assets/kv.png" alt="melab3" loading=lazy class="Work-imagen uno"></a>
+            </h3>
+            <h3 class="Work-proyecto dos"><video src="assets/feti.mp4" autoplay loop playsinline class="Work-imagen dos"></video>
+            </h3>
+            <h3 class="Work-proyecto tres"><img src="assets/aguila.png" alt="aguila" loading="lazy"
+                    class="Work-imagen tres">
+            </h3>
+            <h3 class="Work-proyecto cuatro"><img src="assets/pintala.jpg" loading=lazy alt="fotografia"
+                    class="Work-imagen cuatro"></h3>
+            <h3 class="Work-proyecto cinco"><img src="assets/tada.webp" alt="TaDa" loading=lazy
+                    class="Work-imagen cinco">
+            </h3>
+        </article>
+        <!-- <div> se usa aquí porque no es un bloque semántico, sino un elemento visual interactivo-->
+        <div class="Aviso-mouse">Haz scroll</div>
+    </main>
+
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contact</title>
+    <link rel="stylesheet" href="css/contact.css">
+    <script src="js/contact.js" defer ></script>
+    <link rel="stylesheet" href="assets/fonts/stylesheet.css">
+    <link rel="stylesheet" href="assets/fonts/stylesheetjogan.css">
+  
+</head>
+
+<body>
+    <!-- dejo el mismo header del index, esta vez sin un div contenedor ya que no necesito que desaparezca o aparezca toda la página-->
+    <header class="Header">
+        <section class="Header-menu">
+            <h1 class="Header-logo">
+                <a href="index.html" title="ir a home" class="Header-home">
+                    <img src="assets/logoverde.png" alt="melissa chavarro" class="Header-logo" loading="lazy">
+                </a>
+            </h1>
+            <nav class="Header-nav">
+                <ul class="Header-sections">
+                    <li class="Header-section work">
+                        <a href="work.html" title="ir a work" class="Header-work">Work</a>
+                    </li>
+                    <li class="Header-section contact">
+                        <a href="contact.html" title="ir a contact" class="Header-contact">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+        </section>
+    </header>
+    <!--  -->
+    <main class="Main">
+       <!--  quiero que la info del form llegue a un espacio concreto, dejo el action sin especificar -->
+         <!-- dejo una clase general para dar estilo y centrar el formulario en pantalla. -->
+        <form action="#" method="post" class="Formulario">
+            <!-- agrego type="button" para que el formulario no se envíe realmente. -->
+            <div class="Aviso-mouse">da click</div>
+            <label class="Formulario-deseos">cuéntame tus deseos</label>
+            <input type="text" name="mensaje" class="Formulario-texto">
+            <button type="button" class="Formulario-enviar">enviar</button>
+
+            <div class="Main-pop">
+                <div class="Pop-mensaje">¡Tu deseo ha sido escuchado! En breve te contactaremos</div>
+                <button type="button" class="Pop-close">cerrar</button>
+            </div>
+        </form>
+    </main>
+</body>
+
+</html>

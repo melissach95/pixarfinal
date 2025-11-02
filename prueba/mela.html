@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>melab3</title>
+    <link rel="stylesheet" href="css/mela.css">
+    <link rel="preconnect" href="/https://fonts.googleapis.com">
+    <link rel="preconnect" href="/https://fonts.gstatic.com" crossorigin>
+  
+</head>
+
+<body>
+    <!-- para este html la idea es que no se vea un header, asi las personas tendrán que ver todo el trabajo hasta el final para salir de la página -->
+    <main class="Main">
+        <div class="Main-start">
+            <img src="assets/portadamela.png" alt="Melab3" class="Main-portada">
+            <img src="assets/melacontexto.png" alt="revela tu verdadera piel" loading=lazy class="Main-context">
+        </div>
+        <div class="Main-videos">
+            <!-- agrego atributos a los videos para que no se reproduzca automaticamente, aparezca una imagen previa  -->
+            <video src="assets/videomelauno.mp4" controls poster="assets/inviteuno.png" preload="metadata" playsinline class="Main-video"></video>
+            <video src="assets/videomelados.mp4" controls poster="assets/inviteuno.png" preload="metadata" playsinline class="Main-video"></video>
+        </div>
+        <div class="Main-invites">
+            <img src="assets/inviteuno.png" alt="invite una" loading=lazy class="Main-invite">
+            <img src="assets/invitedos.png" alt="invite dos" loading=lazy class="Main-invite">
+            <img src="assets/invitetres.png" alt="invite tres" loading=lazy  class="Main-invite">
+        </div>
+        <div class="Main-welcome">
+            <!-- Cada imagen cuenta con atributo alt y carga diferida (lazy) para optimizar rendimiento. -->
+             <!-- se usan  modificadoras (uno, dos, tres...) para controlar la posición de cada una -->
+            <div class="Main-copy uno">asi fue la revolución del cuidado de la piel</div>
+            <img src="assets/melatres.jpg" alt="mela uno" loading=lazy class="Main-photo uno">
+            <img src="assets/melados.jpg" alt="mela dos" loading=lazy class="Main-photo dos">
+            <img src="assets/melacuatro.jpg" alt="mela tres" loading=lazy class="Main-photo tres">
+            <img src="assets/melacinco.jpg" alt="mela cuatro" loading=lazy class="Main-photo cuatro">
+            <div class="Main-copy dos">junto a los expertos dermatológicos</div>
+            <img src="assets/molecula.png" alt="mela cinco" loading=lazy class="Main-photo cinco">
+            <img src="assets/molecula.png" alt="mela seis" loading=lazy class="Main-photo seis">
+            <img src="assets/molecula.png" alt="mela siete" loading=lazy class="Main-photo siete">
+        </div>
+
+        <div class="Main-thanks">
+            <img src="assets/melafinal.png" alt="gracias la roche posay" loading=lazy class="Main-team">
+        </div>
+         <div class="Main-arow">
+            <a href="work.html" title="ir a portfolio" class="Main-return"> volver a portfolio </a>
+        </div>
+    </main>
+
+</body>
+
+</html>

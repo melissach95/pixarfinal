@@ -1,0 +1,298 @@
+:root {
+    scroll-behavior: smooth;
+    font-size: 100%;
+    --tt-up-subt: uppercase;
+}
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}
+
+p a {
+    display: inline;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong,
+em,
+mark,
+pre,
+code {
+    font: inherit;
+}
+
+mark {
+    background-color: transparent;
+}
+
+picture,
+img,
+video,
+iframe {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    height: initial;
+}
+
+svg {
+    display: block;
+    width: initial;
+    height: initial;
+    fill: currentColor;
+}
+
+
+form,
+input,
+select,
+option,
+textarea,
+label,
+fieldset,
+legend,
+button {
+    display: block;
+    font: inherit;
+    background-color: initial;
+}
+
+fieldset {
+    border: none;
+}
+
+button,
+label {
+    cursor: pointer;
+}
+body{
+    font-family: 'jogan_softregular', sans-serif;
+}
+
+/* se repite la barra de menu, de los demas html */
+.Header-menu {
+    width: 100%;
+    min-height: 10vh;
+    background-color: rgb(244, 50, 193);
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+
+
+    position: fixed;
+    bottom: 0vh;
+
+    z-index: 2;
+
+}
+
+.Header-sections {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+    margin: 0 2rem 0 0;
+
+    font-size: 1.5rem;
+    color: #adff2f;
+}
+
+.Header-logo {
+    width: 25vh;
+}
+
+/* quiero que los elementos queden centrados en la ventana */
+.Main {
+    width: 100%;
+    min-height: 90vh;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+
+}
+
+/* los elementos que estan dentro del formulario centrado, estan dispuestos verticalmente */
+.Formulario {
+    width: 100%;
+    min-height: 50vh;
+    padding: 2rem;
+
+    text-transform: var(--tt-up-subt);
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+
+}
+
+.Formulario-deseos {
+
+    font-size: 3rem;
+    text-align: center;
+    color: rgb(244, 50, 193);
+}
+
+/* ya que el input en un elemento vacio queria que este tuviera una forma, por eso agregue un back-ground en imagen */
+/* cursor none para que cuando el mouse pase por ahi no se vea la flecha */
+.Formulario-texto {
+    width: 100%;
+    height: 40vh;
+    margin: auto;
+    text-align: center;
+    background: url(/assets/nubeinput.svg) no-repeat center;
+    background-size: 50vh;
+    border-color: white;
+    cursor: none;
+}
+
+.Formulario-enviar {
+    width: 20%;
+    min-height: 5vh;
+    background-color: #f432c1;
+    color: white;
+    text-transform: var(--tt-up-subt);
+    transition: width 1s ease, background-color 1s ease, color 1s ease;
+}
+
+.Formulario-enviar:hover {
+    width: 15%;
+    background-color: #adff2f;
+    color: rgb(244, 50, 193);
+}
+
+/* efecto para cambiar el mouse del raton a un texto */
+.Aviso-mouse {
+    opacity: 0;
+    position: fixed;
+    top: -2.5rem;
+    left: -2.5rem;
+
+}
+
+/* cuando este activo el mouse se verá asi y pointer events para que se pueda hacer clicleable el elemento debajo del mouse */
+.Aviso-mouse.isActive {
+    width: 5rem;
+    height: 5rem;
+    background-color: rgba(244, 50, 192, 0.69);
+    padding: 1rem;
+    text-align: center;
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 1;
+    transition: opacity 1s ease;
+    cursor: none;
+
+}
+
+/* quiero un cuadro que se ponga por arriba de los elementos anteriores en la mitad de la ventana */
+/* dentro de este hay dos elementos que se ubican en columna */
+/* uso pointer events para que los elementos debajo de el,  sean clicleables, entendiendo que tiene opacidad */
+.Main-pop {
+    width: 70%;
+    height: 80vh;
+    background-color: #adff2f;
+
+    position: fixed;
+    top: 5vh;
+    left: 15vw;
+
+    opacity: 0;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    text-transform: var(--tt-up-subt);
+    pointer-events: none;
+    transition: opacity 1s ease;
+}
+
+/* cuando este activo o visible los elementos dentro de el sean clicleables */
+
+.Main-pop.isActive {
+    opacity: 1;
+    pointer-events: auto;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+
+.Pop-close {
+    width: 10vw;
+    background-color: #f432c1;
+    padding: 1rem 2rem;
+    transition: background-color 1s ease, width 1s ease;
+}
+
+.Pop-close:hover {
+    width: 7vw;
+    background-color: white;
+}
+
+.Pop-mensaje {
+
+    width: 65%;
+    font-size: 3rem;
+    text-align: center;
+}
+
+/* ajusto la posición del pop y ajusto el tamaño del svg que hace parte del input */
+@media (max-width:1024px) {
+
+
+    .Formulario {
+        gap: 5rem;
+    }
+
+    .Main-pop {
+        width: 90%;
+        height: 80vh;
+        top: 5vh;
+        left: 5vw;
+    }
+
+    .Pop-mensaje {
+        width: 62%;
+        font-size: 2rem;
+    }
+
+    .Pop-close {
+        width: 20vw;
+        padding: 1rem;
+    }
+}
+
+@media (max-width:500px) {
+    .Formulario-texto {
+        background-size: 40vh;
+    }
+
+    .Header-sections {
+        gap: 1rem;
+    }
+}

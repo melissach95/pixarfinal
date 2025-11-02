@@ -1,0 +1,322 @@
+:root {
+    scroll-behavior: smooth;
+    font-size: 100%;
+    font-display: swap;
+    --tt-up-subt: uppercase;
+    --fw-bold-subt: 600;
+    --fz-3-subt: 2rem;
+    background-color: #26113f;
+    font-family: "Montserrat", sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}
+
+p a {
+    display: inline;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong,
+em,
+mark,
+pre,
+code {
+    font: inherit;
+}
+
+mark {
+    background-color: transparent;
+}
+
+picture,
+img,
+video,
+iframe {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    height: initial;
+}
+
+svg {
+    display: block;
+    width: initial;
+    height: initial;
+    fill: currentColor;
+}
+
+
+form,
+input,
+select,
+option,
+textarea,
+label,
+fieldset,
+legend,
+button {
+    display: block;
+    font: inherit;
+    background-color: initial;
+}
+
+fieldset {
+    border: none;
+}
+
+button,
+label {
+    cursor: pointer;
+}
+
+/* Agrego un altura grande para mostrar varias secciones con imagenes grandes  */
+.Main {
+    width: 100%;
+    min-height: 600vh;
+}
+
+.Main-videos {
+    width: 80%;
+    margin: auto;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 6rem;
+}
+
+/* ajusto tamaño de video  */
+.Main-video {
+    width: 30%;
+}
+
+.Main-invites {
+    width: 90%;
+    margin: 3rem auto;
+    padding: 2rem;
+
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Main-invite {
+    width: 25%;
+}
+
+/* /* Creo una rejilla para organizar imágenes y textos en una composición controlada  */
+.Main-welcome {
+    width: 90%;
+    min-height: 300vh;
+    margin: auto;
+
+    color: #663398;
+    text-transform: var(--tt-up-subt);
+    font-weight: var(--fw-bold-subt);
+    font-size: var(--fz-3-subt);
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+}
+
+/* los align-self y justify-self me ayudan a alinear cada foto dentro de su cuadricula  */
+.Main-copy.uno {
+    grid-column: 2/3;
+    grid-row: 2/3;
+    text-align: center;
+    align-self: center;
+}
+
+.Main-copy.dos {
+    width: 50%;
+    grid-column: 1/2;
+    grid-row: 3/4;
+    align-self: center;
+    justify-self: center;
+}
+
+.Main-photo {
+    width: 80%;
+}
+
+.Main-photo.uno {
+    grid-column: 2/3;
+    align-self: center;
+}
+
+.Main-photo.dos {
+    grid-column: 3/4;
+    grid-row: 2/3;
+    justify-self: end;
+}
+
+.Main-photo.tres {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    align-self: end;
+}
+
+.Main-photo.cuatro {
+    grid-column: 3/4;
+    grid-row: 3/4;
+    align-self: center;
+}
+
+/* creo una contenedora para centrar el botón */
+.Main-arow {
+    width: 30%;
+    min-height: 20vh;
+    margin: auto;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.Main-return {
+    color: white;
+    text-transform: var(--tt-up-subt);
+    text-align: center;
+    outline: 1px solid white;
+    padding: 1rem;
+}
+
+.Main-return:hover {
+    background-color: white;
+    color: #663398;
+}
+
+/* la posicion de las fotos cambia en una pantalla de ipad */
+@media (max-width:1024px) {
+    .Main {
+        min-height: 300vh;
+        gap: 2rem;
+    }
+
+    .Main-welcome {
+        min-height: 100vh;
+    }
+
+    .Main-photo.cuatro {
+        align-self: end;
+        grid-row: 4/5;
+        background-color: aqua;
+    }
+
+    .Main-photo.siete {
+        grid-column: 1/2;
+        grid-row: 4/5;
+    }
+
+    .Main-photo.seis {
+        justify-self: end;
+    }
+
+    .Main-copy.dos {
+        justify-self: start;
+    }
+}
+
+/* responsive para pasar de varias imagenes horizontalmente a solo una */
+@media (max-width:900px) {
+
+    .Main-invites {
+
+        flex-flow: column nowrap;
+        gap: 1rem;
+    }
+
+    .Main-invite {
+        width: 80%;
+    }
+
+    .Main-welcome {
+        min-height: 300vh;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        font-size: 1rem;
+        position: relative;
+
+
+    }
+
+    .Main-copy.uno {
+        width: 60%;
+    }
+
+    .Main-copy.dos {
+        text-align: center;
+    }
+
+    .Main-photo {
+        width: 80%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .Main-photo.cinco {
+        width: 30%;
+        position: absolute;
+        top: 10vh;
+        right: 0vw;
+    }
+
+    .Main-photo.seis {
+        width: 30%;
+        position: absolute;
+    }
+
+    .Main-photo.siete {
+        display: block;
+        position: absolute;
+        bottom: 8vh;
+        left: 0vw;
+        width: 30%;
+    }
+
+    .Main-videos {
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .Main-video {
+        width: 70%;
+        justify-content: center;
+    }
+
+    .Main-arow {
+        width: 80%;
+
+    }
+
+}
